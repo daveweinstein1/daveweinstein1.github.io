@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dave Weinstein</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.65;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .header {
+            border-bottom: 2px solid #e9ecef;
+            padding: 50px 50px 35px 50px;
+            background: white;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-size: 1.15em;
+            color: #6c757d;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .contact {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+        
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        
+        .content {
+            padding: 45px 50px 60px 50px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        .section-title {
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #495057;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .intro {
+            font-size: 1.05em;
+            line-height: 1.75;
+            color: #495057;
+            margin-bottom: 18px;
+        }
+        
+        .experience-item {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .role {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+        
+        .company {
+            font-size: 1em;
+            color: #6c757d;
+            margin-bottom: 3px;
+        }
+        
+        .period {
+            font-size: 0.9em;
+            color: #adb5bd;
+        }
+        
+        .description {
+            margin-top: 12px;
+            color: #495057;
+            line-height: 1.7;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tech-tag {
+            background: #f1f3f5;
+            padding: 4px 11px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #495057;
+        }
+        
+        .education {
+            color: #495057;
+            line-height: 1.7;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: #212529;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            
+            .content {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAB4AHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="Dave Weinstein" class="profile-photo">
+            <div class="header-text">
+                <div class="name">Dave Weinstein</div>
+                <div class="title">Internet Pioneer & Entrepreneur</div>
+                <div class="contact">
+                    <span>Melbourne, Australia</span>
+                    <span><a href="https://www.linkedin.com/in/daveweinstein/">LinkedIn</a></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <p class="intro">
+                    Internet pioneer and entrepreneur with 35+ years building foundational computing infrastructure. Registered x.com in 1993, one of three single-letter .com domains ever released. Currently developing open source privacy computing platform as alternative to surveillance-based cloud services.
+                </p>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Background</div>
+                <p class="intro">
+                    Co-founded Pittsburgh Powercomputing in 1988 with Marcel DePaolis. First company to use exotic graphics hardware to accelerate Unix, Xenix, and Linux on x86 systems. Developed X Window System server software and secured major technology partnerships with NCR and Unix System Labs, where we wrote the loadable driver interface for Unix System V. Negotiated acquisition by Quarterdeck Office Systems (of QEMM fame) to merge our technology with DESQview, their multitasking DOS product that predated Windows, making X Window System their new GUI.
+                </p>
+                <p class="intro">
+                    In April 1993, registered x.com, one of only three single-letter .com domains ever released by IANA before the remaining 23 were permanently reserved. Ran x.com as private email service for six years.
+                </p>
+                <p class="intro">
+                    In early 1999, sold x.com (the domain) to Elon Musk for cash plus equity stake in his new company X.com (the financial services company), which merged with Confinity to become PayPal. Met regularly with Musk during X.com's early development. According to Jimmy Soni's book "The Founders," Musk described the negotiation: "those bastards insisted on equity."
+                </p>
+                <p class="intro">
+                    Founded netdrive.com in 1998, one of the first cloud storage services enabling remote file access via web interface, built before "cloud computing" was a term. Pioneered concepts that became standard in services like Dropbox and Google Drive a decade later.
+                </p>
+                <p class="intro">
+                    Career spans multiple foundational computing shifts: Unix graphics acceleration, early commercial internet, cloud storage, mobile email infrastructure, venture capital, hardware development, and privacy computing. Founded Disruptive Thermodynamics (originally Aquifer Labs) in 2013 to develop ultra-high efficiency hybrid air conditioning and atmospheric water generation systems. Managed international operations across Hong Kong and Singapore, securing a strategic partnership with Nanyang Technological University (NTU) in Singapore for research collaboration and technology development.
+                </p>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Current Work</div>
+                <p class="intro">
+                    Developing open source privacy computing infrastructure through Disruptive Scientific. Primary project is Scaean Gateway, a network security appliance with four core capabilities: full-speed VPN gateway achieving 2.5GbE throughput (10GbE with higher-spec hardware), transparent LAN bridging across multiple physical locations, built-in tracking and anti-fingerprinting protection, and enterprise-grade security. Technology preview releasing early 2026.
+                </p>
+                <p class="intro">
+                    Scaean Gateway is the first visible component of a larger privacy computing platform. The platform includes a distributed cloud OS, privacy-focused browser, and AI-integrated applications for communications and productivity. It's designed to replace surveillance-dependent cloud services with user-controlled alternatives. Additional projects include local-first AI systems and privacy-preserving application suite.
+                </p>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">History</div>
+                
+                <div class="experience-item">
+                    <div class="role">Founder</div>
+                    <div class="company">Disruptive Scientific</div>
+                    <div class="period">2024 - Present</div>
+                    <div class="description">
+                        Developing privacy computing infrastructure and networking technologies. Primary work includes open source network security appliances, distributed cloud OS, privacy-focused browser, and AI-integrated applications designed as alternatives to surveillance-based cloud services.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">CTO and Advisory Board Member</div>
+                    <div class="company">EDEA Energy</div>
+                    <div class="period">2020 - 2024 (CTO: 2021 - 2023)</div>
+                    <div class="description">
+                        Chief Technology Officer and strategic technical advisor leading technology strategy and product development.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Chairman and CEO</div>
+                    <div class="company">Disruptive Thermodynamics (formerly Aquifer Labs)</div>
+                    <div class="period">2013 - 2020</div>
+                    <div class="description">
+                        Founded and led development of ultra-high efficiency hybrid air conditioning and atmospheric water generation systems. Built technical team and managed international operations across Hong Kong and Singapore. Secured strategic partnership with Nanyang Technological University (NTU) in Singapore for research and technology development. Developed groundbreaking new technology with extreme energy efficiency and single digit GWP (global warming potential).
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Hardware Development</span>
+                        <span class="tech-tag">Thermodynamics</span>
+                        <span class="tech-tag">International Operations</span>
+                        <span class="tech-tag">University Partnerships</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Mentor</div>
+                    <div class="company">NTU (TechXcel Pte Ltd) & NUS Enterprise</div>
+                    <div class="period">2015 - 2017</div>
+                    <div class="description">
+                        In-house mentor, startup coach, and strategic advisor for companies being accelerated at NTU by TechXcel. Also served as mentor and advisor for technology spin-outs from the National University of Singapore (NUS Enterprise).
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Partner / Managing Partner, China</div>
+                    <div class="company">Gramercy Venture Advisors / Gramercy Private Equity</div>
+                    <div class="period">2002 - 2010</div>
+                    <div class="description">
+                        Led venture investments across US and China markets. Based in Beijing 2007-2008, then commuted from San Francisco. Evaluated technology companies, provided strategic guidance to portfolio companies.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Senior Editor, US</div>
+                    <div class="company">New Atlas (formerly Gizmag)</div>
+                    <div class="period">2003 - 2009</div>
+                    <div class="description">
+                        Technology journalist covering emerging technologies, hardware innovations, and breakthrough scientific developments during Web 2.0 era. <a href="https://newatlas.com/search/?q=dave+weinstein">Article archive</a>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">VP Business Development</div>
+                    <div class="company">Visto Corporation</div>
+                    <div class="period">2000 - 2002</div>
+                    <div class="description">
+                        Joined through Visto's acquisition of netdrive.com. Led strategic pivot from web-based "Hotmail for business" to becoming the backend communications provider for all non-BlackBerry mobile devices. Forged initial partnerships with Qualcomm for their new BREW OS platform and with HandSpring for the Treo device family, establishing Visto's position in the emerging mobile email market. Visto later acquired Good Technology and was itself acquired by BlackBerry (RIM), consolidating the mobile email infrastructure market.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Mobile Email Infrastructure</span>
+                        <span class="tech-tag">Strategic Partnerships</span>
+                        <span class="tech-tag">Platform Strategy</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Founder</div>
+                    <div class="company">netdrive.com</div>
+                    <div class="period">1998 - 2000</div>
+                    <div class="description">
+                        Founded one of the first cloud storage services, enabling remote file access via web interface. Built before "cloud computing" was a term, pioneering concepts that became standard in later services. Company acquired by Visto Corporation.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Cloud Storage Pioneer</span>
+                        <span class="tech-tag">Web Infrastructure</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="role">Co-Founder</div>
+                    <div class="company">Pittsburgh Powercomputing</div>
+                    <div class="period">1988 - 1993</div>
+                    <div class="description">
+                        First company to use exotic graphics hardware to accelerate Unix, Xenix, and Linux on x86 systems. Developed X Window System server software for remote graphical display and networking infrastructure. Secured major technology partnerships with NCR and Unix System Labs (USL), where we wrote the loadable driver interface for Unix System V. Negotiated acquisition by Quarterdeck Office Systems to merge our technology with DESQview (pre-Windows multitasking DOS product) and make X Window System their new GUI. Software assets acquired in 1993; retained domain names including x.com.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">X Window System</span>
+                        <span class="tech-tag">Unix/Linux Graphics</span>
+                        <span class="tech-tag">System Software</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education">
+                    <div class="degree">Bachelor of Science (3x)</div>
+                    Electrical Engineering, Computer Engineering, Biomedical Engineering<br>
+                    Carnegie Mellon University, 1984-1989
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Current Status</div>
+                <p class="intro">
+                    Based in the Melbourne area, Australia. Relocated in 2020 under the Australian government's Distinguished Talent visa program (subclass 124), which recognizes individuals with internationally recognized records of exceptional achievement in their professional field. The visa is granted to those who have demonstrated outstanding ability and are expected to provide outstanding contributions to Australia's economy, particularly in technology and innovation sectors.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
