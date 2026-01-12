@@ -109,6 +109,58 @@
             color: #6c757d;
         }
 
+        /* Mobile Responsive Styles */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                padding: 30px 20px 25px 20px;
+            }
+
+            .header-text {
+                padding-right: 0;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+                margin: 0 0 15px 0;
+            }
+
+            .name {
+                font-size: 1.8em;
+            }
+
+            .tagline {
+                font-size: 0.95em;
+            }
+
+            .content {
+                padding: 25px 20px 35px 20px;
+            }
+
+            .prose {
+                margin-bottom: 20px;
+                font-size: 0.95em;
+            }
+
+            .section-break {
+                height: 20px;
+            }
+
+            .footer {
+                margin-top: 25px;
+                padding-top: 20px;
+                font-size: 0.85em;
+            }
+
+            .theme-switch {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
         /* Dark Mode Toggle Switch */
         .theme-switch {
             position: absolute;
