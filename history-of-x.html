@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Early History of X.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            border-bottom: 1px solid #e9ecef;
+            padding: 40px 50px 30px 50px;
+            background: white;
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            letter-spacing: -0.3px;
+        }
+
+        .header-subtitle {
+            font-size: 1.1em;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .content {
+            padding: 45px 50px 60px 50px;
+        }
+
+        .prose {
+            margin-bottom: 28px;
+            color: #495057;
+            font-size: 1.02em;
+        }
+
+        .prose:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #495057;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px 25px 20px;
+            }
+
+            .header-title {
+                font-size: 1.6em;
+            }
+
+            .content {
+                padding: 25px 20px 35px 20px;
+            }
+
+            .prose {
+                margin-bottom: 20px;
+                font-size: 0.95em;
+            }
+        }
+
+        /* Dark Mode Theme (matching index.html) */
+        body.dark-mode {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .container {
+            background: #242424;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .header {
+            background: #242424;
+            border-bottom-color: #3a3a3a;
+        }
+
+        body.dark-mode .header-title {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .header-subtitle {
+            color: #a0a0a0;
+        }
+
+        body.dark-mode .prose {
+            color: #c8c8c8;
+        }
+
+        body.dark-mode h3 {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .back-link {
+            color: #c0c0c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="./index.html" class="back-link">&larr; Back to Bio</a>
+            <div class="header-title">The Early History of X.com</div>
+            <div class="header-subtitle">How we registered the first single-letter commercial .com domain</div>
+        </div>
+
+        <div class="content">
+            <p class="prose">
+                I wrote this in 2019 to give to Jimmy Soni while he was researching the PayPal era in his book "The
+                Founders: The Story of Paypal and the Entrepreneurs Who Shaped Silicon Valley". It's 384 pages covering
+                one of the most consequential companies in Silicon Valley history. Marcel and I get about a quarter
+                page. That feels about right.
+            </p>
+
+            <h3>The Early History of X.com</h3>
+
+            <p class="prose">
+                In the era that x.com was originally registered, the Internet was a very different environment compared
+                to the decades of explosive growth that were soon to follow. Back in 1988, as Marcel DePaolis and Dave
+                Weinstein started their first company, Pittsburgh Powercomputing, there was no consumer Internet to
+                speak of. It was more like an exclusive and tightly controlled club being predominantly the realm of
+                government agencies, universities, and a handful of very large technology-oriented companies. It
+                typically required the sponsorship of an existing member to join. Over the next couple of years this
+                policy was gradually loosened such that an ordinary company might consider its own domain registration.
+            </p>
+
+            <p class="prose">
+                In those early days, the contract for managing domain names for NSFNET (the National Science
+                Foundation's precursor to what we now call the Internet) was handled by Network Telesystems. They were
+                responsible for maintaining a list of existing names as well as name reservations for networks that were
+                going to be implemented later. So around 1990 we reserved ppc.com (the registered trademark initials of
+                our company) for later use.
+            </p>
+
+            <p class="prose">
+                For the few small businesses who were aware of and managed to deploy email at all, it was usually
+                relayed via dial-up modem at up to 14.4kbps using the UUCP protocol. A carefully configured email server
+                in your office would call your service provider (later known as an ISP) many times per day to deliver a
+                batch of outbound messages and retrieve any available as addressed to your domain. This service provider
+                was then responsible for storing and forwarding the outbound email to other customers or providers using
+                various peering protocols. It was possible to have a direct full-time data connection at 56kbps or even
+                1.5Mbps using exotic network gear and special leased lines but it was VERY expensive.
+            </p>
+
+            <p class="prose">
+                Fast forward about two years and our small company was finally ready to invest the money in hardware and
+                services to activate our email domain. We called up our provider to make arrangements and got a rude
+                awakening. It turned out that in early 1992, NSF was given authority by the U.S. Congress to allow
+                commercial entities onto the NSFNET which was the first step to becoming the Internet as we know it
+                today. At that point the contract for managing DNS information was taken over by Network Solutions and
+                all those reservations that Network Telesystems had taken got tossed into the trash. We were shocked to
+                discover that someone else had managed to register our ppc.com! Our immediate reaction was to fight for
+                it, but a few calls with our lawyer convinced us that there was little to nothing we could really do
+                since at this dawn of the commercial Internet there was no legal connection between a domain name and a
+                trademark. So, being a small company with limited resources, we were screwed.
+            </p>
+
+            <p class="prose">
+                With no viable options left, we decided to just pick a new domain name. The company's business was
+                building X Window System server software, so we figured that we should get a name that at least
+                reflected that since we couldn't use a name that was our name. Keep in mind this was still an era of
+                information scarcity. We were still 2 years away from the introduction of Netscape's first browser and
+                there wasn't even a good "whois" to check for domain availability because many networks weren't even
+                connected. The normal procedure was to fill out a form and FAX it in to your service provider, then wait
+                a few weeks to see if it was taken. We didn't like that at all and were still irritated about losing our
+                name. We wanted a definite and confirmed answer immediately for a replacement!
+            </p>
+
+            <p class="prose">
+                So we went old-school, simply called up Network Solutions and asked to talk to their network operations.
+                Back in 1992 NOBODY called them for tech support and usually the only people who called at all were the
+                network admins from universities and research labs. Thus it was fairly easy to get through and talk to
+                someone actually connected to their internal network operations. We explained the situation and asked if
+                they could check a few name choices using the internal "whois" on their network to see if they were
+                available before we placed an order. After trying several options, the best one available was clearly
+                "x.com". We couldn't quite believe it and had them double check to see if it was not only free, but also
+                allowed. All good on all counts.
+            </p>
+
+            <p class="prose">
+                Next call was to our local ISP, who told us in no uncertain terms that (a) one letter domain names were
+                illegal, (b) that we needed to pick a name at least three letters long, and (c) if they sent in the form
+                as requested it would be immediately rejected. At this point, Dave stepped up with his best Zaphod
+                Beeblebrox imitation and said, "I just got off the phone with network operations at Network Solutions
+                five minutes ago and they assured me that it was not only permissible, but also available. So you let me
+                worry about whether it's OK and you just send in the form the way we're asking you to!" Apparently it
+                worked, the sysop decided it was easier to send in a form that he was SURE would be rejected than to
+                argue with us (spoiler alert: it wasn't rejected). Network Solutions, having no explicit policy against
+                one letter names, simply approved our request. After "x", "q", and "z" slipped through the ".com" nets
+                in the first year of this new service model, the arrival of 1993 saw the IANA (the Internet Assigned
+                Numbers Authority) simply reserve the remaining 23 letters for theoretical future purposes, effectively
+                ending the race for single letter domains.
+            </p>
+
+            <p class="prose">
+                This was the year Marcel and Dave sold Pittsburgh Powercomputing Corp's software assets to a public
+                company that doesn't exist anymore. The fact that they didn't want the regulatory hassle of getting SEC
+                approval and other compliance paperwork required to acquire our small company motivated them to just buy
+                specific items and hire our staff, but NOT buy the rest of the company. They weren't even interested in
+                our domain because they "already had one". So x.com stayed with us after the sale and we just used it
+                for our own personal email service (remember this is STILL before commercial web browsers, three years
+                before Hotmail, and more than a decade before Gmail). We kept that running for about six years
+                occasionally creating email accounts for friends and family. Even at the peak of our tenure, there were
+                only about 50 email users.
+            </p>
+
+            <p class="prose">
+                Occasionally we'd be contacted by an individual or company that was interested in buying "x.com", but
+                nearly all were uninteresting deals. And none were even worth giving up our convenient email service.
+                Until one day in 1999, and under the looming shadow of Y2K, we were approached by Elon Musk who wanted
+                to start his second company, an online bank. We checked him out and liked his story and plan. Feeling
+                optimistic about the situation, we were able to reach a deal that seemed fair to us and the new X.com.
+                We used to meet for breakfast or lunch in Palo Alto about once a month to catch up with Elon and to get
+                updates on X.com's progress. Despite the rumors of a $1M price tag, the actual deal was a combination of
+                a small amount of cash and a modest equity stake in the new company. Over time we were pleased to see
+                our confidence was well placed.
+            </p>
+
+            <p class="prose">
+                In the end we liked Elon and believed in him as a fellow entrepreneur. The deal worked out well. We
+                stayed in touch for a while through those early PayPal years, but eventually life took us in different
+                directions. We had a front-row seat to the beginning of something significant.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Apply saved theme on load (simple version without toggle, assumes user preference from index)
+        (function () {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</body>
+
+</html>
